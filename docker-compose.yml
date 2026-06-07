@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres_source:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: source_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_source_data:/var/lib/postgresql/data
+
+  postgres_target:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: target_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_target_data:/var/lib/postgresql/data
+
+volumes:
+  pg_source_data:
+  pg_target_data:
