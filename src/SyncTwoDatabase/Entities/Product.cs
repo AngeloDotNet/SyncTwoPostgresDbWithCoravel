@@ -2,8 +2,8 @@
 
 public class Product
 {
-	public Guid Id { get; set; }
-	public string Name { get; set; } = null!;
-	public decimal Price { get; set; }
-	public DateTime UpdatedAtUtc { get; set; } // campo usato per l'incremental sync
+    public Guid Id { get; set; }
+    public string Name { get; set; } = "";
+    public decimal Price { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }
